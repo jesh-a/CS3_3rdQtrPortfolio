@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <title>Q3_2GNaAyuyao</title>
+    <body>
+      <div id="container">
+        <form
+          method="post"
+          action="submit"
+          onsubmit="return confirm('Are you sure you want to submit? If unsure, recheck if all information are correct.');"
+          onreset="return confirm('Are you sure you want to reset the form?');"
+        >
+
+          <div id="wrapper">A. Student Information Form</div>
+
+          <div id="personalInfo">
+            <label
+              >Student ID:<input type="number" name="studentID"
+            /></label>
+            <label
+              >Full Name:<input id="info" type="text" name="fullName" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span></label>
+            </label>
+            <label>Birthday:<input type="date" name="birthday" /></label>
+            <label>Email:<input type="email" name="email" /></label>
+            <label
+              >Mobile phone: <input id="info" type="text" name="mobilePhone" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
+            </label>
+          </div>
+
+          <div id="schoolInfo">
+            <div id="wrapper">B. School Information Form</div>
+            <label for="gradeLevel">Grade Level:</label>
+
+            <select id="gradeLevel" name="gradeLevel">
+              <option value="7">Grade 7</option>
+              <option value="8">Grade 8</option>
+              <option value="9">Grade 9</option>
+              <option value="10">Grade 10</option>
+              <option value="11">Grade 11</option>
+              <option value="12">Grade 12</option>
+            </select>
+
+            <br />
+
+            <div id="internOrExtern">
+              <input id="intern" type="radio" name="internOrExtern" />
+              <label for="intern">Intern</label>
+              <input id="extern" type="radio" name="internOrExtern" />
+              <label for="extern">Extern</label>
+            </div>
+
+            <br />
+
+            <label for="preferredClubs">Preferred Clubs:</label>
+
+            <select id="preferredClubs" name="preferredClubs">
+              <option value="gaming">Gaming Club</option>
+              <option value="sports">Sports Club</option>
+              <option value="music">Music Club</option>
+              <option value="art">Arts Club</option>
+              <option value="science">Sciences Club</option>
+            </select>
+
+            <label>
+              Why do you want to join this club?
+              <input id="info" type="text" name="clubReason" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
+            </label>
+
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+          </div>
+        </form>
+        <h4>Please fill out the form in all honesty.</h4>
+        <br>
+        <br>
+        <p>  𝜗𝜚 ࣪˖ ִ𐙚  -- &copy; Ayuyao, Jesh. All rights reserved. </p>
+      </div>
+    </body>
+  </html>
+</html>

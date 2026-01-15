@@ -1,0 +1,56 @@
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#gradeLevel {
+  width: 70px;
+}
+
+label {
+  color: #5b4141;
+  display: block;
+  padding: 5px;
+  font-family: "Verdana", sans-serif;
+}
+input:focus {
+    background-color: #fffafa;
+    outline: 2px solid #ff7b7b;
+}
+select {
+  color: #8a6363;
+}
+#container {
+  background-color: #ffdada;
+  max-width: 500px;
+  border-radius: 15px;
+  height: 600px;
+  margin: auto;
+}
+
+#wrapper {
+  background-color: #e19191;
+  border-radius: 10px;;
+  color: #a25151;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Verdana", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#internOrExtern {
+  display: flex;
+}
+
+h4 {
+  color: #5b4141;
+  text-align: center;
+  font-family: "Verdana", sans-serif;
+}
+
+p {
+    color: #5b4141;
+    text-align: center;
+}

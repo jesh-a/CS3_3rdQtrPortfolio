@@ -25,8 +25,8 @@
             <label
               >Full Name:<input id="info" type="text" name="fullName" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span></label>
             </label>
-            <label>Birthday:<input type="date" name="birthday" required /></label> 
-            <label>Email:<input type="email" name="email" required /></label>
+            <label>Birthday:<input type="date" name="birthday" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span></label> 
+            <label>Email:<input type="email" name="email" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span></label>
             <label
               >Mobile phone: <input id="info" type="text" name="mobilePhone" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
             </label>
@@ -36,7 +36,7 @@
             <div id="wrapper">B. School Information Form</div>
             <label for="gradeLevel">Grade Level:</label>
 
-            <select id="gradeLevel" name="gradeLevel" required>
+            <select id="gradeLevel" name="gradeLevel" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
               <option value="7">Grade 7</option>
               <option value="8">Grade 8</option>
               <option value="9">Grade 9</option>
@@ -48,17 +48,16 @@
             <br />
 
             <div id="internOrExtern">
-              <input id="intern" type="radio" name="internOrExtern" required />
+              <input id="intern" type="radio" name="internOrExtern">
               <label for="intern">Intern</label>
-              <input id="extern" type="radio" name="internOrExtern" required />
-              <label for="extern">Extern</label>
+              <input id="extern" type="radio" name="internOrExtern">
             </div>
 
             <br />
 
             <label for="preferredClubs">Preferred Clubs:</label>
 
-            <select id="preferredClubs" name="preferredClubs" required>
+            <select id="preferredClubs" name="preferredClubs" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
               <option value="gaming">Gaming Club</option>
               <option value="sports">Sports Club</option>
               <option value="music">Music Club</option>

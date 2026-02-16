@@ -5,15 +5,13 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="styles.css" />
+     
     </head>
     <title>Q3_2GNaAyuyao</title>
     <body>
       <div id="container">
         <form
-          method="post"
-          action="submit"
-          onsubmit="return confirm('Are you sure you want to submit? If unsure, recheck if all information are correct.');"
-          onreset="return confirm('Are you sure you want to reset the form?');"
+          id="signUpForm"
         >
 
           <div id="wrapper">A. Student Information Form</div>
@@ -48,9 +46,9 @@
             <br />
 
             <div id="internOrExtern">
-              <input id="intern" type="radio" name="internOrExtern">
+              <input id="intern" type="radio" name="internOrExtern" value="Intern">
               <label for="intern">Intern</label>
-              <input id="extern" type="radio" name="internOrExtern">
+              <input id="extern" type="radio" name="internOrExtern" value="Extern">
               <label for="extern">Extern</label>
             </div>
 
@@ -66,16 +64,67 @@
               <option value="science">Sciences Club</option>
             </select>
 
+            <br />
+            
             <label>
               Why do you want to join this club?
               <input id="info" type="text" name="clubReason" onblur="if(this.value===''){this.style.border='2px solid red'; this.nextElementSibling.style.display='inline';} else {this.style.border=''; this.nextElementSibling.style.display='none';}"><span style="color:red; display:none;"> Required Field</span>
             </label>
 
-            <input type="submit" value="Submit" />
+            <button type="submit" onclick="onButtonSubmit(event)">Submit</button>
             <button type="reset">Reset</button>
           </div>
-        </form>
-        <h4>Please fill out the form in all honesty.</h4>
+        </form> 
+        <script>
+          const KEY = 'signups';
+
+          function onButtonSubmit(event) {
+            event.preventDefault();
+            const form = event.target.form;
+            const studentID = form.elements['studentID'].value.trim();
+            const fullName = form.elements['fullName'].value.trim();
+            const birthday = form.elements['birthday'].value.trim();
+            const email = form.elements['email'].value.trim();
+            const mobilePhone = form.elements['mobilePhone'].value.trim();
+            const gradeLevel = form.elements['gradeLevel'].value.trim();
+            const internOrExtern = document.querySelector('input[name="internOrExtern"]:checked')?.value || '';
+            const preferredClubs = form.elements['preferredClubs'].value.trim();
+            const clubReason = form.elements['clubReason'].value.trim();
+            
+            if (!studentID || !fullName || !birthday || !email || !mobilePhone || !gradeLevel || !internOrExtern || !preferredClubs || !clubReason) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+            const signUp = { studentID, fullName, birthday, email, mobilePhone, gradeLevel, internOrExtern, preferredClubs, clubReason };
+            confirmAndAdd(signUp);
+            form.reset();
+          }
+
+          function confirmAndAdd(signUp) {
+            if (confirm('Are you sure you want to submit? If unsure, recheck if all information are correct.')) {
+              addSignUp(signUp);
+              alert('Sign up successful! Thank you for joining.');
+            }
+          }
+
+          function addSignUp(signUp) {
+            const signUps = getSignUps();
+            signUps.push(signUp);
+            localStorage.setItem(KEY, JSON.stringify(signUps));
+          }
+
+          function getSignUps() {
+            const signUps = localStorage.getItem(KEY);
+            return signUps ? JSON.parse(signUps) : [];
+          }
+
+          function clearSignUps() {
+            localStorage.removeItem(KEY);
+          }
+
+        </script>
+        <h4>Please fill out the form honestly.</h4>
+        <button onclick="location.href='viewSignUps.html'">View Sign-Ups</button>
         <br>
         <br>
         <p>  𝜗𝜚 ࣪˖ ִ𐙚  -- &copy; Ayuyao, Jesh. All rights reserved. </p>
